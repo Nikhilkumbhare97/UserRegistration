@@ -44,6 +44,19 @@ public class UserRegistration{
 		}
 	}
 
+	static void userMobileNumber() {
+
+		String mobileNumber = user.nextLine();
+		boolean result = Pattern.matches("^[0-9]{2}[ ][6-9]{1}[0-9]{9}$", mobileNumber);
+		if (result == true) {
+			System.out.println("You Have Enter Valid Mobile Number: " +mobileNumber);
+		}else {
+			System.out.println("Not a Valid Mobile Number");
+			System.out.println("Please Re-enter Mobile Number: ");
+			userMobileNumber();
+		}
+	}
+
 	public static void main(String[] args){
 
 		System.out.println(" Enter First Name ");
@@ -52,6 +65,8 @@ public class UserRegistration{
 		userLastName();
 		System.out.println(" Enter Email ID");
 		userEmail();
+		System.out.println("Enter Mobile Number");
+		userMobileNumber();
 
    }
 }
