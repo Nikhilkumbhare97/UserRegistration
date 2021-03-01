@@ -60,8 +60,8 @@ public class UserRegistration{
 	static void userPassword() {
 
 		String password = user.nextLine();
-		boolean result = Pattern.matches("^[A-za-z0-9.!#$%&]{8,}$", password);
-		if (result = true) {
+		boolean result = Pattern.matches("(?=.*[A-Z]).{8,15}", password);
+		if (result == true) {
 			System.out.println("You Have Entered Valid PassWord ");
 		}else {
 			System.out.println("Not a Valid Password");
