@@ -57,6 +57,19 @@ public class UserRegistration{
 		}
 	}
 
+	static void userPassword() {
+
+		String password = user.nextLine();
+		boolean result = Pattern.matches("^[A-za-z0-9.!#$%&]{8,}$", password);
+		if (result = true) {
+			System.out.println("You Have Entered Valid PassWord ");
+		}else {
+			System.out.println("Not a Valid Password");
+			System.out.println("Please Re-enter PassWord ");
+			userPassword();
+		}
+	}
+
 	public static void main(String[] args){
 
 		System.out.println(" Enter First Name ");
@@ -67,6 +80,8 @@ public class UserRegistration{
 		userEmail();
 		System.out.println("Enter Mobile Number");
 		userMobileNumber();
+		System.out.println("Enter Password");
+		userPassword();
 
    }
 }
