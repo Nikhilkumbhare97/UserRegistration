@@ -31,12 +31,27 @@ public class UserRegistration{
 		}
 	}
 
+	static void userEmail() {
+
+		String email = user.nextLine();
+		boolean result = Pattern.matches("^[A-Za-z0-9]+(\\.[A-Za-z0-9-]+)*@" + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$", email);
+		if (result == true) {
+			System.out.println("You Have Enter Valid Email: " +email);
+		}else {
+			System.out.println("Not a Valid Email");
+			System.out.println("Please Re-enter Email: ");
+			userEmail();
+		}
+	}
+
 	public static void main(String[] args){
 
-	System.out.println(" Enter First Name ");
-	userFirstName();
-	System.out.println(" Enter Last Name ");
-	userLastName();
+		System.out.println(" Enter First Name ");
+		userFirstName();
+		System.out.println(" Enter Last Name ");
+		userLastName();
+		System.out.println(" Enter Email ID");
+		userEmail();
 
    }
 }
