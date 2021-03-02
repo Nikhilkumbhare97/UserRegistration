@@ -60,7 +60,7 @@ public class UserRegistration{
 	static void userPassword() {
 
 		String password = user.nextLine();
-		boolean result = Pattern.matches("(?=.*[0-9])(?=.*[A-Z]).{8,15}", password);
+		boolean result = Pattern.matches("^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=[^$@!#%*?&]*[$#@!%*?&][^$@!#%*?&]*$).{8,}", password);
 		if (result == true) {
 			System.out.println("You Have Entered Valid PassWord ");
 		}else {
